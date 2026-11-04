@@ -1,1 +1,636 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Product Portfolio</title><meta name="description" content="Product portfolio: initiatives, teardowns and products launched."><style>html,body{height:100%;margin:0;background:#fff}</style></head><body></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishesh Dargan — AI Product Manager</title>
+<meta name="description" content="AI product manager. Took Sprinklr's AI Agent from 0 to 100 paid clients in 8 months ($5M incremental ARR). Now at the Indian School of Business.">
+<meta property="og:title" content="Vishesh Dargan — AI Product Manager">
+<meta property="og:description" content="0→100 paid clients in 8 months. $5M incremental ARR. AI agents, governance and 0→1 builds.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0c'/%3E%3Cpath d='M16 5l3.2 7.8L27 16l-7.8 3.2L16 27l-3.2-7.8L5 16l7.8-3.2z' fill='%23ff7a3d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0c; --panel:#111115; --panel2:#16161b; --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
+  --text:#f4f4f5; --muted:#a1a1aa; --dim:#71717a; --accent:#ff7a3d; --accent2:#ffb86b;
+  --head:'Space Grotesk',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --wrap:1180px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+   radial-gradient(900px 500px at 78% -5%,rgba(255,122,61,.13),transparent 60%),
+   linear-gradient(var(--line) 1px,transparent 1px) 0 0/72px 72px,
+   linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/72px 72px;
+  opacity:.55;-webkit-mask-image:linear-gradient(#000 40%,transparent 100%);mask-image:linear-gradient(#000 40%,transparent 100%)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{font:600 12px/1 var(--head);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+.eyebrow.dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+h1,h2,h3{font-family:var(--head);margin:0;font-weight:500;letter-spacing:-.02em}
+h2{font-size:clamp(36px,6vw,64px);line-height:1.02;text-transform:uppercase;margin-top:18px}
+.lede{color:var(--muted);max-width:56ch;font-size:17px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.sec-head .lede{margin:0}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font:500 14px var(--head);letter-spacing:.18em;text-transform:uppercase}
+.brand svg{width:26px;height:26px}
+.links{display:flex;gap:30px;font:500 12px var(--head);letter-spacing:.16em;text-transform:uppercase}
+.links a{color:var(--muted);transition:color .2s;padding:6px 0}
+.links a:hover,.links a.on{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.ico{width:34px;height:34px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;color:var(--muted);transition:.2s}
+.ico:hover{color:var(--accent);border-color:var(--accent)}
+.ico svg{width:15px;height:15px;fill:currentColor}
+.cta-dot{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#0a0a0c;display:grid;place-items:center;transition:transform .2s}
+.cta-dot:hover{transform:rotate(45deg) scale(1.06)}
+.cta-dot svg{width:15px;height:15px}
+@media(max-width:820px){.links{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border:1px solid var(--line2);border-radius:4px;font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase;transition:.2s;background:rgba(255,255,255,.02)}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.btn.solid{background:var(--accent);color:#0a0a0c;border-color:var(--accent)}
+.btn.solid:hover{background:var(--accent2);color:#0a0a0c}
+.btn svg{width:14px;height:14px}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+h1{font-size:clamp(46px,8.2vw,104px);line-height:.98;font-weight:500;margin:26px 0 28px}
+h1 .g{background:linear-gradient(90deg,#fff 0%,var(--accent2) 55%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:clamp(16px,1.6vw,19px);max-width:58ch;color:#c4c4cb}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.arch-wrap{position:relative;display:grid;place-items:center;min-height:380px}
+.ring{position:absolute;border:1px dashed var(--line2);border-radius:50%;animation:spin 60s linear infinite}
+.ring.a{width:86%;aspect-ratio:1}.ring.b{width:112%;aspect-ratio:1;animation-duration:90s;animation-direction:reverse;opacity:.5}
+@keyframes spin{to{transform:rotate(360deg)}}
+.arch{position:relative;width:min(300px,72%);aspect-ratio:3/4;border-radius:999px 999px 28px 28px;border:1px solid var(--line2);
+  background:radial-gradient(120% 70% at 50% 0%,rgba(255,122,61,.28),transparent 60%),linear-gradient(180deg,#17171c,#0e0e12);display:grid;place-items:center;overflow:hidden}
+.arch b{font:500 clamp(84px,11vw,132px)/1 var(--head);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55)}
+.arch::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,rgba(255,122,61,.14))}
+.pill{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;padding:9px 16px;border-radius:99px;border:1px solid var(--line2);background:rgba(10,10,12,.9);font:500 11px var(--head);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.arch-wrap{min-height:340px;order:-1}.hero{padding-top:40px}.ring.b{width:96%}}
+
+.built{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.built span.l{font:600 11px var(--head);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.built b{font:500 17px var(--head);color:#d4d4d8;letter-spacing:-.01em}
+
+/* metrics */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:56px}
+.metric{background:var(--panel);padding:30px 28px;transition:background .4s}
+.metric .num{font:500 clamp(40px,5vw,64px)/1 var(--head);letter-spacing:-.03em;color:#52525b;transition:color .4s,text-shadow .4s}
+.metric.on{background:#15120f}
+.metric.on .num{color:var(--accent);text-shadow:0 0 30px rgba(255,122,61,.45)}
+.metric h4{margin:14px 0 4px;font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase}
+.metric p{margin:0;color:var(--dim);font-size:14px}
+@media(max-width:760px){.metrics{grid-template-columns:1fr}}
+
+/* impact grid */
+.impact{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:26px;background:linear-gradient(180deg,var(--panel),transparent);transition:border-color .25s,transform .25s}
+.stat:hover{border-color:var(--accent);transform:translateY(-3px)}
+.stat .num{font:500 46px/1 var(--head);letter-spacing:-.03em;color:var(--accent)}
+.stat h4{margin:14px 0 6px;font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase}
+.stat p{margin:0;color:var(--muted);font-size:14px}
+@media(max-width:900px){.impact{grid-template-columns:1fr 1fr}}@media(max-width:560px){.impact{grid-template-columns:1fr}}
+
+/* journey */
+.track{position:relative;margin:8px 0 28px;padding:0 0 30px}
+.lane{position:relative;height:44px;margin-bottom:8px}
+.seg{position:absolute;top:0;height:44px;border-radius:8px;border:1px solid var(--line2);background:var(--panel2);padding:0 10px;font:500 11px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:.25s;text-align:left}
+.seg:hover{border-color:var(--accent);color:var(--text)}
+.seg.on{background:var(--accent);border-color:var(--accent);color:#0a0a0c;box-shadow:0 0 28px rgba(255,122,61,.4)}
+.ticks{position:relative;height:18px;border-top:1px solid var(--line)}
+.ticks i{position:absolute;top:6px;font:500 10px var(--head);letter-spacing:.14em;color:var(--dim);font-style:normal;transform:translateX(-50%)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{padding:9px 16px;border:1px solid var(--line2);border-radius:99px;font:500 12px var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:.2s}
+.tab:hover{color:var(--text)}.tab[aria-selected="true"]{background:var(--text);color:#0a0a0c;border-color:var(--text)}
+.panel{border:1px solid var(--line);border-radius:16px;padding:34px;background:var(--panel);display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel .when{font:600 11px var(--head);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.panel h3{font-size:32px;margin:10px 0 4px;line-height:1.1}
+.panel .org{color:var(--muted);font:500 14px var(--head);letter-spacing:.12em;text-transform:uppercase}
+.panel .sum{color:var(--muted);margin:18px 0 0;font-size:15px}
+.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.panel li{position:relative;padding-left:22px;color:#d4d4d8;font-size:15px}
+.panel li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:1px;background:var(--accent)}
+@media(max-width:820px){.panel{grid-template-columns:1fr;padding:24px}}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.edu div{border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.edu h4{margin:0 0 6px;font:500 19px var(--head)}.edu p{margin:0;color:var(--muted);font-size:14px}
+.edu .k{font:600 10px var(--head);letter-spacing:.2em;color:var(--dim);text-transform:uppercase;display:block;margin-bottom:10px}
+.edu em{font:500 28px var(--head);font-style:normal;color:var(--accent);white-space:nowrap}
+@media(max-width:760px){.edu{grid-template-columns:1fr}}
+
+/* work cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:24px;background:linear-gradient(180deg,var(--panel),rgba(17,17,21,.4));transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--line2);transform:translateY(-3px)}
+.card-top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.tag{padding:5px 10px;border-radius:99px;font:600 10px var(--head);letter-spacing:.16em;text-transform:uppercase;border:1px solid}
+.t-launch{color:var(--accent);border-color:rgba(255,122,61,.4);background:rgba(255,122,61,.08)}
+.t-init{color:#7dd3fc;border-color:rgba(125,211,252,.35);background:rgba(125,211,252,.07)}
+.t-built{color:#86efac;border-color:rgba(134,239,172,.35);background:rgba(134,239,172,.07)}
+.t-tear{color:#d8b4fe;border-color:rgba(216,180,254,.35);background:rgba(216,180,254,.07)}
+.meta{font-size:12px;color:var(--dim)}
+.card h3{font-size:22px;line-height:1.2;margin:18px 0 10px}
+.card .sum{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+.chips{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:6px 10px;border-radius:6px;background:rgba(255,255,255,.05);font:500 12px var(--head);color:#e4e4e7}
+.more{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--line);font:600 11px var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);width:100%}
+.more:hover{color:var(--accent)}.more span{font-size:18px;transition:transform .2s}.more[aria-expanded="true"] span{transform:rotate(45deg)}
+.detail{padding-top:16px}.detail ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.detail li{position:relative;padding-left:16px;font-size:14px;color:#d4d4d8}
+.detail li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--accent)}
+.opens{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.open{padding:9px 14px;border:1px solid rgba(255,122,61,.45);border-radius:6px;color:var(--accent);font:600 11px var(--head);letter-spacing:.14em;text-transform:uppercase;transition:.2s}
+.open:hover{background:var(--accent);color:#0a0a0c}
+.soon{border-style:dashed;align-items:center;justify-content:center;text-align:center;min-height:240px;color:var(--dim)}
+.soon h3{color:var(--muted);margin-top:0}.soon p{margin:0;font-size:14px}
+.center-row{display:flex;justify-content:center;margin-top:40px}
+
+/* work view */
+.filters{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;margin:0 0 28px}
+.chipset{display:flex;gap:8px;flex-wrap:wrap}
+.f{padding:9px 14px;border:1px solid var(--line2);border-radius:99px;font:500 11px var(--head);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:.2s}
+.f small{opacity:.6;margin-left:6px;font-size:11px}
+.f:hover{color:var(--text)}.f[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:rgba(255,122,61,.08)}
+.search{background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:11px 14px;color:var(--text);font:14px var(--body);min-width:240px}
+.search::placeholder{color:var(--dim)}
+.count{font:500 11px var(--head);letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin-bottom:20px}
+.empty{text-align:center;padding:70px 0;color:var(--muted)}
+.empty h3{font-size:26px;margin-bottom:8px;color:var(--text)}
+
+/* beyond */
+.beyond{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{text-align:left;border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s}
+.tile:hover{border-color:var(--accent);transform:translateY(-3px)}
+.tile i{font-style:normal;font-size:26px;display:block;margin-bottom:16px}
+.tile h4{margin:0 0 6px;font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase}
+.tile p{margin:0;color:var(--muted);font-size:13.5px}
+@media(max-width:900px){.beyond{grid-template-columns:1fr;gap:36px}}@media(max-width:480px){.tiles{grid-template-columns:1fr}}
+dialog{border:1px solid var(--line2);border-radius:18px;background:var(--panel);color:var(--text);padding:34px;max-width:520px;width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(0,0,0,.7);backdrop-filter:blur(4px)}
+dialog h3{font-size:28px;margin:8px 0 14px}dialog p{color:#d4d4d8;margin:0 0 24px}
+dialog .x{float:right;width:34px;height:34px;border:1px solid var(--line2);border-radius:50%;font-size:18px;line-height:1}
+dialog .big{font-size:36px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;border:1px solid var(--line);border-radius:22px;padding:clamp(28px,5vw,64px);background:radial-gradient(700px 300px at 90% 0%,rgba(255,122,61,.14),transparent 70%),var(--panel)}
+.rows{display:grid;gap:14px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.25);transition:.2s}
+a.row:hover{border-color:var(--accent);transform:translateX(4px)}
+.row span{font:600 10px var(--head);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.row b{font:500 16px var(--head)}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--dim);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:22px}footer a:hover{color:var(--accent)}
+
+/* views + reveal */
+[data-view="work"] .home-only,[data-view="home"] .work-only{display:none}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body data-view="home" id="top">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vishesh Dargan, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l3.6 9.4L29 16l-9.4 3.6L16 29l-3.6-9.4L3 16l9.4-3.6z" fill="#ff7a3d"/></svg>
+      Vishesh Dargan
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#top" data-nav="home">Home</a>
+      <a href="#journey" data-nav="journey">Journey</a>
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="nav-r">
+      <a class="ico" data-link="linkedin" hidden target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2 3.75-2 4 0 4.75 2.6 4.75 6v5.9h-4v-5.2c0-1.25 0-2.85-1.75-2.85s-2 1.35-2 2.75v5.3h-4z"/></svg></a>
+      <a class="ico" data-link="email" hidden aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.6 7v.1L12 12.4 19.4 7.1V7z"/></svg></a>
+      <a class="cta-dot" href="#contact" aria-label="Get in touch"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L12 4M5 4h7v7"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="home-only">
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow dot">AI Product Manager</div>
+          <h1>AI products<br><span class="g">enterprises</span><br>actually adopt.</h1>
+          <p class="lede">3.5 years owning GenAI agents, AI governance and integrations at Sprinklr — $5M incremental ARR across 100 clients. Now sharpening product craft at the Indian School of Business.</p>
+          <div class="cta-row">
+            <a class="btn solid" href="#work">View work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+            <a class="btn" data-link="resume" hidden target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg> Download resume</a>
+          </div>
+        </div>
+        <div class="arch-wrap" aria-hidden="true">
+          <div class="ring a"></div><div class="ring b"></div>
+          <!-- To use a photo later: replace <b>VD</b> with <img src="photo.jpg" alt="Vishesh Dargan" style="width:100%;height:100%;object-fit:cover"> -->
+          <div class="arch"><b>VD</b></div>
+          <div class="pill">Building at ISB</div>
+        </div>
+      </div>
+
+      <div class="metrics" id="metrics">
+        <div class="metric"><div class="num"><span data-count="5" data-prefix="$" data-suffix="M">$5M</span></div><h4>Incremental ARR</h4><p>Sprinklr AI Agent, 100 clients</p></div>
+        <div class="metric"><div class="num">0→100</div><h4>Paid clients</h4><p>In 8 months, end to end owner</p></div>
+        <div class="metric"><div class="num"><span data-count="94" data-suffix="%">94%</span></div><h4>Agent success rate</h4><p>+10 pts across 200K monthly resolutions</p></div>
+      </div>
+
+      <div class="built">
+        <span class="l">Where I've built</span>
+        <b>Sprinklr</b><b>Bain &amp; Company</b><b>PayPal</b><b>Pixis.ai</b><b>Absolutdata</b><b>ISB</b>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">Impact</div><h2>Numbers that<br>moved.</h2></div>
+        <p class="lede">A few results from shipping AI, platform and analytics products for enterprise clients.</p>
+      </div>
+      <div class="impact">
+        <div class="stat reveal"><div class="num"><span data-count="80" data-suffix="%">80%</span></div><h4>Less manual effort</h4><p>For 20K end users of the AI Agent</p></div>
+        <div class="stat reveal"><div class="num"><span data-count="15" data-prefix="$" data-suffix="M">$15M</span></div><h4>Renewal ARR retained</h4><p>Client Pulse health platform</p></div>
+        <div class="stat reveal"><div class="num"><span data-count="20" data-suffix="%">20%</span></div><h4>L1 support absorbed</h4><p>RAG FAQ bot, 500+ enterprises</p></div>
+        <div class="stat reveal"><div class="num"><span data-count="60" data-suffix="%">60%</span></div><h4>Faster AI set-up</h4><p>5-step funnel to 2 steps, 10K admins</p></div>
+        <div class="stat reveal"><div class="num"><span data-count="1.4" data-decimals="1" data-suffix="x">1.4x</span></div><h4>Release velocity</h4><p>Led a 14-member pod to 2-week sprints</p></div>
+        <div class="stat reveal"><div class="num"><span data-count="1.95" data-decimals="2" data-prefix="$" data-suffix="M">$1.95M</span></div><h4>Preventable cost a year</h4><p>PayPal CX AI agent gaps, 5 prioritised</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">Career arc</div><h2>Roles &amp;<br>results.</h2></div>
+        <p class="lede">Consulting, B2B SaaS, a startup of my own, and now ISB. Select a role to see what I shipped.</p>
+      </div>
+      <div class="reveal">
+        <div class="track" id="track" aria-label="Career timeline"></div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Roles"></div>
+        <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+        <div class="edu">
+          <div><section style="padding:0"><span class="k">Education</span><h4>Indian School of Business</h4><p>PGP · IT &amp; Management · Apr 2026 – present</p></section></div>
+          <div><section style="padding:0"><span class="k">Education</span><h4>Delhi Technological University</h4><p>B.Tech, Computer Engineering · 2018 – 2022</p></section><em>8.49<small style="font-size:14px;color:var(--dim)">/10</small></em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="selected">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow">Portfolio</div><h2>Selected<br>work.</h2></div>
+        <a class="btn" href="#work">View all work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
+      <div class="grid" id="featured"></div>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="wrap beyond">
+      <div class="reveal">
+        <div class="eyebrow">Beyond the PM</div>
+        <h2>Musician.<br>Speaker.<br>Researcher.</h2>
+        <p class="lede" style="margin-top:22px">State-level tabla player, Toastmasters VP and a published IEEE author. Discipline, listening and storytelling show up in every product I build.</p>
+      </div>
+      <div class="tiles reveal" id="tiles"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div>
+          <div class="eyebrow">Let's talk</div>
+          <h2 style="font-size:clamp(34px,5vw,56px)">Building something<br>AI-shaped?</h2>
+          <p class="lede" style="margin-top:20px">Happy to talk AI products, B2B SaaS and 0→1 builds. Reach out and I'll get back to you.</p>
+        </div>
+        <div class="rows" id="contactRows">
+          <a class="row" data-link="email" hidden><span>Email</span><b data-text="email"></b></a>
+          <a class="row" data-link="linkedin" hidden target="_blank" rel="noopener"><span>LinkedIn</span><b>Connect</b></a>
+          <a class="row" data-link="resume" hidden target="_blank" rel="noopener"><span>Resume</span><b>Download (PDF)</b></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= WORK ================= -->
+<div class="work-only">
+  <section style="padding-top:72px">
+    <div class="wrap">
+      <div class="eyebrow">Portfolio</div>
+      <h2 style="font-size:clamp(48px,10vw,120px)">All work.</h2>
+      <p class="lede" style="margin:22px 0 48px">Key launches, initiatives, products I've built and teardowns. Built across enterprise AI, SaaS, consumer and fintech.</p>
+      <div class="filters">
+        <div class="chipset" id="chipset"></div>
+        <input class="search" id="search" type="search" placeholder="Search projects…" aria-label="Search projects">
+      </div>
+      <div class="count" id="count"></div>
+      <div class="grid" id="library"></div>
+      <div class="empty" id="empty" hidden><h3 id="emptyT">No results found.</h3><p id="emptyP">Try a different search term or filter.</p><div class="center-row"><button class="btn" id="clear">Clear filters</button></div></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vishesh Dargan</span>
+    <nav aria-label="Footer"><a href="#top">Home</a><a href="#journey">Journey</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+  </div>
+</footer>
+
+<dialog id="story"><button class="x" aria-label="Close" id="close">×</button><div class="big" id="sIcon"></div><h3 id="sTitle"></h3><p id="sBody"></p></dialog>
+
+<script>
+/* ===== Fill these in, then re-deploy. Empty values stay hidden on the live site. ===== */
+const CONFIG = {
+  email: "darganvishu@gmail.com",      // e.g. "you@example.com"
+  linkedin: "https://www.linkedin.com/in/vishesh-dargan-480253201/",   // full URL, e.g. "https://www.linkedin.com/in/your-handle"
+  resume: "Vishesh-Dargan-Resume.pdf"      // e.g. "Vishesh-Dargan-Resume.pdf" (put the PDF next to index.html)
+};
+
+/* ===== Content ===== */
+const ITEMS = [
+ {type:"Key Launch",org:"Sprinklr",period:"2024–26",featured:true,
+  title:"Sprinklr AI Agent for Social Media Management",
+  summary:"Scaled the AI Agent from 0 to 100 paid clients in 8 months, leading discovery, build and go-to-market.",
+  metrics:["0→100 paid clients","$5M ARR","94% success rate"],
+  bullets:["Shipped Dashboard Builder, Performance Analytics and Post Creator, cutting manual time and effort by 80% for 20K end users.","Lifted agent success rate to 94% (+10 pts) across 200K monthly resolutions with golden test set evals, orchestration logic and A/B tests.","Ran 10+ client demos and pilots; 6 pilots converted to $300K ARR of paid deals.","Trained client-facing teams on use cases."]},
+ {type:"Key Launch",org:"Sprinklr",period:"2024–26",featured:true,
+  title:"Client Pulse — client health platform",
+  summary:"Flagged churn risk early to protect renewals and surface upsell, from discovery to go-live in under 3 months.",
+  metrics:["$15M renewals retained","$5M upsell surfaced"],
+  bullets:["Defined the metric taxonomy and schema for Unified Social Analytics, the data layer powering Client Pulse, unifying feeds from 10+ channel APIs.","Owned the roadmap, cross-team sprint planning and team enablement."]},
+ {type:"Key Launch",org:"Sprinklr",period:"2024–26",featured:true,
+  title:"AI Help Assist — RAG-powered FAQ bot",
+  summary:"Built a RAG FAQ bot for 500+ enterprises that absorbed a fifth of L1 support workload.",
+  metrics:["20% L1 load absorbed","NPS +15 pts","5 languages"],
+  bullets:["Rolled out in 5 European languages, letting 8,000+ end users self-resolve product queries across EMEA customers."]},
+ {type:"Key Launch",org:"Sprinklr",period:"2024–26",featured:true,
+  title:"AI Governance Platform",
+  summary:"A centralised platform for responsible AI usage across 1,000 clients.",
+  metrics:["1,000 clients","AI adoption +20%","60% faster set-up"],
+  bullets:["Shortened AI feature set-up by 60% by mapping drop-offs across a 5-step provisioning funnel and simplifying it to 2 steps for 10K admins.","Introduced a product-wide AI kill switch that disables 100% of AI features in one click."]},
+ {type:"Key Launch",org:"Sprinklr",period:"2024–26",
+  title:"Identity & Access Management",
+  summary:"Strengthened authentication, provisioning, user lifecycle and RBAC for 1,200 enterprise clients.",
+  metrics:["1,200 clients","15K creations / quarter","−30% password resets"],
+  bullets:["Automated user creation, role provisioning and contractor/partner lifecycle controls, adopted by 1,000 clients.","Enforced SSO and automated employee deprovisioning via Entra ID, speeding up login by 10%."]},
+ {type:"Key Launch",org:"Sprinklr",period:"2024–26",
+  title:"Channel Integrations & Instagram Threads",
+  summary:"Owned API and webhook integrations for 10 social channels and added 3 new ones.",
+  metrics:["230K post publishes","200 clients","Coverage +10%"],
+  bullets:["Drove 230K post publishes across 200 clients, including Red Bull and Nike, by integrating Instagram Threads.","Recognised by Meta as a Key Partner."]},
+ {type:"Initiative",org:"Sprinklr",period:"2024–26",
+  title:"Product usability overhaul",
+  summary:"Simplified modules for 5 personas by mapping journeys across 300+ metrics.",
+  metrics:["−30% post failures","Adoption +10%","−20% rule set-up time"],
+  bullets:["Flagged 20% of features as underused for sunset.","Added pre-publish checks validating post fields against each channel's API schema across 10 channels.","Introduced step-by-step walkthroughs for 20+ core features."]},
+ {type:"Initiative",org:"PayPal · ISB ELP",period:"2026",featured:true,
+  title:"PayPal CX AI Agent strategy",
+  summary:"Shaping PayPal's CX AI agent strategy across blocked accounts and delayed refunds, its highest-friction journeys.",
+  metrics:["$1.95M / yr cost gaps","5 gaps from 16 pain points"],
+  bullets:["Prioritised 5 gaps from 16 pain points across CX journeys and designed agentic workflows to close them."]},
+ {type:"Initiative",org:"Bain & Company",period:"2022–23",
+  title:"POS Analytics Accelerator",
+  summary:"Productised 50+ analytical workflows on Alteryx for large-scale retail and POS data.",
+  metrics:["−85% turnaround time","200+ analysts","50+ teams"],
+  bullets:["Cut analytical turnaround from 4 days to half a day.","Scaled adoption through trainings across India offices."]},
+ {type:"Initiative",org:"Bain & Company",period:"2022–23",
+  title:"LISA — AI interviewing platform",
+  summary:"Ideated an AI-powered interviewing platform that placed in the Top 10 of the global Bain Hackathon (500+ teams).",
+  metrics:["Top 10 of 500+ teams","~30% interview cost cut"],
+  bullets:["Concept directly reduces total interview costs by around 30%."]},
+ {type:"Initiative",org:"Pixis.ai",period:"Internship",
+  title:"Ad Management & Google RMF certification",
+  summary:"Shipped 5 Ad Management features to achieve Google RMF certification.",
+  metrics:["$50K revenue protected","5 features"],
+  bullets:["Awarded a pre-placement offer (1 of 20 interns)."]},
+ {type:"Product Built",org:"Co-founder",period:"2025–26",featured:true,
+  title:"TagWise — anonymous QR tags for vehicle owners",
+  summary:"A privacy-first way to contact the owner of a wrongly parked vehicle. Grew 0→500+ users in 5 months, then sunset it for lack of product-market fit.",
+  metrics:["500+ users","2.5K+ scans","₹0 paid marketing"],
+  bullets:["Partnered with 5 housing societies across Delhi/NCR to distribute tags; 500+ monthly vehicle alerts.","Ran 30+ owner interviews and 3 pricing experiments; only 8% converted to paid, so we shut down on evidence rather than hope."]},
+ {type:"Product Built",org:"Razorpay AI PM Build Challenge",period:"2026",featured:true,
+  link:"https://guarantee-agent-prototype.vercel.app/",linkLabel:"Open prototype",
+  title:"Guarantee Agent — fewer hotel no-shows",
+  summary:"An agent for Razorpay Agent Studio that decides, booking by booking, what a hotel guest should pay upfront, so hotels lose fewer rooms to no-shows without losing bookings.",
+  metrics:["41% fewer no-shows (modelled)","₹8.8L / month (modelled)","11-screen prototype"],
+  bullets:["Scores each booking's no-show risk, then picks the lightest guarantee: pay at hotel, a UPI hold, a part advance or full payment, and follows up on WhatsApp.","Built-in guardrails: it cannot cancel bookings or charge no-show fees without hotel approval, and never asks OTA guests for extra money.","Includes a with-vs-without replay, a 7-day pilot option and an audit log. Figures come from the prototype's modelled replay, not live results.","Built solo with AI in 12 days for the Razorpay AI PM Build Challenge, Track 2 (Recover and Grow with AI)."]},
+ {type:"Initiative",org:"PM case study · Ethos",period:"2026",featured:true,
+  links:[{url:"Ethos-Earned-Trust-Memo.pdf",label:"Read the memo"},{url:"https://ethos-agent-quality-prototype-virid.vercel.app/",label:"Open prototype"}],
+  title:"Earned Trust — Ethos agent quality program",
+  summary:"A recommendation to Ethos leadership: price every advance by how well the sale fits the customer, and cap how much Ethos has at risk with any one agent. Agents keep selling; only misconduct ends a contract.",
+  metrics:["3 pre-sale fit checks","90 / 60 / 30% upfront pay","$3,000 starting Trust Line"],
+  bullets:["Every sale is rated before it is submitted on three checks (affordable, billed on payday, need documented); customers confirm budget and payday directly with Ethos.","A per-agent Trust Line caps unearned advances; above it, the agent is paid as customers pay.","Built-in fairness: Ethos absorbs lapses its own billing causes, no verdicts under 10 policies, and exits only for misconduct, with a reason and a 10-day appeal.","Includes a 90-day plan for the agency at the centre of the case, and a north-star metric: unearned advances per premium dollar customers keep paying.","Concept work for a PM case study; all numbers are illustrative."]},
+ {type:"Product Built",org:"ISB",period:"2026",featured:true,
+  link:"https://www.dayzero.buzz/",linkLabel:"Visit DayZero",
+  title:"DayZero — PM prep platform",
+  summary:"ISB's first 4-in-1 PM prep platform, unifying 150 company interview guides, concepts and cases.",
+  metrics:["60% cohort adoption","6 features in <2 weeks"],
+  bullets:["Ran 30 user interviews to identify prep pain points.","Access is limited to ISB students, with Microsoft sign-in."]},
+ {type:"Product Built",org:"ISB",period:"2026",
+  title:"Protein Coach — voice-first AI tracker",
+  summary:"A voice-first, AI-powered protein tracking app that logs meals in under 10 seconds and suggests personalised meals.",
+  metrics:["<10s per log","Voice-first"],
+  bullets:[]},
+ {type:"Product Built",org:"ProdX · ISB",period:"2026",
+  title:"Swiggy Smart AI Meal Planner",
+  summary:"National winner (1 of 500). An AI meal planner for urban corporate professionals.",
+  metrics:["National winner (1/500)","20% projected AOV uplift"],
+  bullets:[]}
+];
+const TYPES = ["Key Launch","Initiative","Product Built","Teardown"];
+const slug = {"Key Launch":"launch","Initiative":"init","Product Built":"built","Teardown":"tear"};
+
+const ROLES = [
+ {id:"isb",name:"ISB",short:"ISB",s:46,e:null,org:"Indian School of Business",title:"PGP · IT & Management",when:"Apr 2026 – Present",
+  sum:"Building products and shaping AI strategy alongside the PGP.",
+  points:["National Winner, ProdX (1 of 500): projected 20% AOV uplift for Swiggy with a Smart AI Meal Planner.","Launched DayZero, ISB's first 4-in-1 PM prep platform, with 60% cohort adoption.","Built Protein Coach, a voice-first AI protein tracker.","Designed Guarantee Agent, an 11-screen prototype for the Razorpay AI PM Build Challenge, and Earned Trust, an agent quality program for an Ethos PM case.","Product Manager at PayPal (ELP): $1.95M a year of preventable cost found across CX AI agent gaps.","Co-founded ISB's first Sports & Business SIG (100+ members)."]},
+ {id:"tagwise",name:"TagWise",short:"TagWise",s:36,e:45,lane:1,org:"TagWise",title:"Co-Founder",when:"Jun 2025 – Mar 2026",
+  sum:"An anonymous QR-tag platform for vehicle owners, built alongside my day job.",
+  points:["Grew 0→500+ users in 5 months with ₹0 paid marketing.","Drove 2.5K+ scans and 500+ monthly vehicle alerts across 5 housing societies.","Ran 30+ owner interviews and 3 pricing experiments; only 8% converted, so I sunset it for lack of PMF."]},
+ {id:"sprinklr",name:"Sprinklr",short:"Sprinklr",s:20,e:45,org:"Sprinklr",title:"Associate Product Manager · B2B SaaS",when:"Feb 2024 – Mar 2026",
+  sum:"Owned Sprinklr AI Agent, Governance and Channel Integrations, leading a 14-member pod on 0→1 builds.",
+  points:["Fast-track promotion in 12 months (vs. 24-month average).","Senior Leadership Excellence Award (Top 5%) for the 0→1 launch of Sprinklr AI Agent, $5M incremental ARR across 100 clients.","Top-performing PM (5 of 100) for leading 10 GenAI features across 3 consecutive quarters.","Led 10 devs, 2 QAs and 2 designers from ad-hoc releases to 2-week sprints (1.4x release velocity).","Ran 10 org-wide sessions on adoption analytics and data pipelines."]},
+ {id:"bain",name:"Bain & Company",short:"Bain",s:0,e:18,org:"Bain & Company",title:"Senior Analyst",when:"Jun 2022 – Dec 2023",
+  sum:"Delivered cases for 10+ Fortune 500 clients across 20+ FMCG categories in the US and EMEA.",
+  points:["Fast-track promotion to Senior Analyst in 9 months (vs. 12 average); rated 4.0/5.0, top 10% of the analyst pool.","Top 10 in the global Bain Hackathon (500+ teams) with LISA, an AI-powered interviewing platform.","Launched the POS Analytics Accelerator: analytical turnaround cut 85%, adopted by 200+ analysts.","Identified 5 high-growth demand spaces worth ~$50M+ for a $5B+ laundry player."]},
+ {id:"early",name:"Early roles",short:null,org:"Pixis.ai · Absolutdata",title:"Product & Data Science Intern",when:"During B.Tech, DTU",
+  sum:"Two internships, both converting to pre-placement offers.",
+  points:["Pixis.ai: shipped 5 Ad Management features for Google RMF certification, protecting $50K in revenue (PPO, 1 of 20).","Absolutdata: projected 10% sales uplift for PepsiCo by optimising in-store SKU placement with deep-learning models (PPO, 1 of 10).","Published IEEE paper (15% acceptance rate) on real-time sign language to text, cited by 10+ authors."]}
+];
+
+const STORIES = [
+ {i:"🥁",t:"Tabla",d:"State-level tabla player. Ranked 1st among 200 players across the Delhi circuit with 10 wins across state-level classical music competitions."},
+ {i:"🎤",t:"Public speaking",d:"Vice President, Toastmasters International. Ranked #1 among 100+ speakers for public speaking and leadership across Delhi/NCR."},
+ {i:"🏏",t:"Sports × business",d:"Co-founded ISB's first Sports & Business SIG (100+ members) and hosted RCB leadership for sports analytics talks."},
+ {i:"📄",t:"Research",d:"Published IEEE paper (15% acceptance rate) on real-time sign language to text with deep learning, cited by 10+ authors."}
+];
+
+/* ===== Helpers ===== */
+const $ = (s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* config-driven links */
+(function(){
+  const map = {email:CONFIG.email&&"mailto:"+CONFIG.email, linkedin:CONFIG.linkedin, resume:CONFIG.resume};
+  $$('[data-link]').forEach(a=>{const v=map[a.dataset.link]; if(v){a.href=v;a.hidden=false; if(a.dataset.link==='resume')a.setAttribute('download','')}});
+  $$('[data-text="email"]').forEach(n=>n.textContent=CONFIG.email);
+  if(!CONFIG.email&&!CONFIG.linkedin&&!CONFIG.resume){$('#contactRows').innerHTML='<div class="row"><span>Contact</span><b>Details coming soon</b></div>'}
+})();
+
+/* cards */
+function cardHTML(it){
+  const ls = it.links||(it.link?[{url:it.link,label:it.linkLabel||'View project'}]:[]);
+  const link = ls.length?`<div class="opens">${ls.map(l=>`<a class="open" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('')}</div>`:'';
+  const has = it.bullets.length;
+  return `<article class="card reveal">
+    <div class="card-top"><span class="tag t-${slug[it.type]}">${it.type}</span><span class="meta">${it.org} · ${it.period}</span></div>
+    <h3>${it.title}</h3><p class="sum">${it.summary}</p>
+    <ul class="chips">${it.metrics.map(m=>`<li>${m}</li>`).join('')}</ul>
+    ${link}
+    ${has?`<button class="more" aria-expanded="false">Details <span>+</span></button>
+    <div class="detail" hidden><ul>${it.bullets.map(b=>`<li>${b}</li>`).join('')}</ul></div>`:''}
+  </article>`;
+}
+function wireCards(root){
+  $$('.more',root).forEach(b=>b.addEventListener('click',()=>{
+    const open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open)); b.nextElementSibling.hidden=open;
+  }));
+}
+$('#featured').innerHTML = ITEMS.filter(i=>i.featured).map(cardHTML).join('');
+wireCards($('#featured'));
+
+/* library */
+let filter="All", q="";
+function renderChips(){
+  const all=["All",...TYPES];
+  $('#chipset').innerHTML = all.map(t=>{
+    const n = t==="All"?ITEMS.length:ITEMS.filter(i=>i.type===t).length;
+    return `<button class="f" aria-pressed="${t===filter}" data-t="${t}">${t}<small>${n}</small></button>`;
+  }).join('');
+  $$('.f').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.t;renderLibrary();}));
+}
+function renderLibrary(){
+  renderChips();
+  const list = ITEMS.filter(i=>(filter==="All"||i.type===filter) && (!q || (i.title+i.summary+i.org+i.metrics.join(' ')).toLowerCase().includes(q)));
+  $('#count').textContent = list.length+" item"+(list.length===1?"":"s");
+  const lib=$('#library');
+  let html=list.map(cardHTML).join('');
+  if((filter==="All"||filter==="Teardown")&&!q) html+=`<article class="card soon reveal in"><div><span class="tag t-tear">Teardown</span><h3 style="margin-top:18px">Teardowns</h3><p>Product teardowns are on the way.</p></div></article>`;
+  lib.innerHTML=html; wireCards(lib);
+  $$('.reveal',lib).forEach(n=>n.classList.add('in'));
+  const none = list.length===0 && !(filter==="Teardown"&&!q);
+  $('#empty').hidden = !none; lib.hidden = none;
+}
+$('#search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();renderLibrary();});
+$('#clear').addEventListener('click',()=>{filter="All";q="";$('#search').value="";renderLibrary();});
+
+/* journey */
+(function(){
+  const now=new Date(), nowIdx=(now.getFullYear()-2022)*12+(now.getMonth()+1-6);
+  const total=Math.max(nowIdx+2,54);
+  const track=$('#track');
+  track.innerHTML='<div class="lane" data-l="0"></div><div class="lane" data-l="1"></div><div class="ticks" id="ticks"></div>';
+  ROLES.filter(r=>r.short).forEach(r=>{
+    const e=r.e??nowIdx, left=r.s/total*100, w=(e-r.s+1)/total*100;
+    const b=document.createElement('button');
+    b.className='seg'; b.dataset.id=r.id; b.textContent=r.short;
+    b.style.left=left+'%'; b.style.width=w+'%';
+    $(`.lane[data-l="${r.lane||0}"]`,track).appendChild(b);
+  });
+  [[2023,7],[2024,19],[2025,31],[2026,43]].forEach(([y,m])=>{
+    const i=document.createElement('i'); i.textContent=y; i.style.left=m/total*100+'%'; $('#ticks').appendChild(i);
+  });
+  const tabs=$('#tabs');
+  tabs.innerHTML=ROLES.map(r=>`<button class="tab" role="tab" data-id="${r.id}">${r.name}</button>`).join('');
+  function show(id){
+    const r=ROLES.find(x=>x.id===id);
+    $$('.tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.id===id)));
+    $$('.seg').forEach(s=>s.classList.toggle('on',s.dataset.id===id));
+    const p=$('#panel'); p.style.animation='none'; p.offsetHeight; p.style.animation='';
+    p.innerHTML=`<div><div class="when">${r.when}</div><h3>${r.title}</h3><div class="org">${r.org}</div><p class="sum">${r.sum}</p></div><ul>${r.points.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+  }
+  $$('.tab,.seg').forEach(el=>el.addEventListener('click',()=>show(el.dataset.id)));
+  show('sprinklr');
+})();
+
+/* beyond tiles + dialog */
+$('#tiles').innerHTML=STORIES.map((s,i)=>`<button class="tile" data-i="${i}"><i>${s.i}</i><h4>${s.t}</h4><p>${s.d.split('. ')[0].replace(/\.$/,'')}.</p></button>`).join('');
+const dlg=$('#story');
+$$('.tile').forEach(t=>t.addEventListener('click',()=>{const s=STORIES[t.dataset.i];$('#sIcon').textContent=s.i;$('#sTitle').textContent=s.t;$('#sBody').textContent=s.d;dlg.showModal();}));
+$('#close').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+
+/* count-up */
+function countUp(el){
+  const end=parseFloat(el.dataset.count), d=+(el.dataset.decimals||0), pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+  if(reduce){el.textContent=pre+end.toFixed(d)+suf;return}
+  const t0=performance.now(), dur=1100;
+  (function step(t){const p=Math.min((t-t0)/dur,1),v=end*(1-Math.pow(1-p,3));el.textContent=pre+v.toFixed(d)+suf;if(p<1)requestAnimationFrame(step)})(t0);
+}
+const counted=new WeakSet();
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting)return; en.target.classList.add('in');
+  $$('[data-count]',en.target).forEach(c=>{if(!counted.has(c)){counted.add(c);countUp(c)}});
+  if(en.target.dataset.count!==undefined&&!counted.has(en.target)){counted.add(en.target);countUp(en.target)}
+  io.unobserve(en.target);
+}),{threshold:.15}):null;
+function observe(){ $$('.reveal,#metrics').forEach(n=>io?io.observe(n):n.classList.add('in')); }
+
+/* hero metric highlight cycle */
+(function(){
+  const ms=$$('.metric'); let i=0; if(!ms.length)return;
+  const tick=()=>{ms.forEach((m,k)=>m.classList.toggle('on',k===i));i=(i+1)%ms.length};
+  tick(); if(!reduce)setInterval(tick,2600);
+})();
+
+/* router: #work shows the library, everything else is the home page */
+function route(){
+  const h=location.hash, work=h==='#work';
+  document.body.dataset.view=work?'work':'home';
+  $$('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===(work?'work':(h.slice(1)||'home'))));
+  if(work){window.scrollTo(0,0);renderLibrary();}
+  else{
+    const el=h&&h!=='#top'?document.getElementById(h.slice(1)):null;
+    requestAnimationFrame(()=>el?el.scrollIntoView():window.scrollTo(0,0));
+    observe();
+  }
+}
+addEventListener('hashchange',route); route(); observe();
+</script>
+</body>
+</html>
