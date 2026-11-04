@@ -58,7 +58,7 @@ h2{font-size:clamp(36px,6vw,64px);line-height:1.02;text-transform:uppercase;marg
 .cta-dot{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#0a0a0c;display:grid;place-items:center;transition:transform .2s}
 .cta-dot:hover{transform:rotate(45deg) scale(1.06)}
 .cta-dot svg{width:15px;height:15px}
-@media(max-width:820px){.links{display:none}}
+@media(max-width:820px){html{scroll-padding-top:116px}.nav .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:4px;row-gap:4px}.links{order:3;width:100%;gap:24px;overflow-x:auto;white-space:nowrap;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border:1px solid var(--line2);border-radius:4px;font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase;transition:.2s;background:rgba(255,255,255,.02)}
@@ -164,6 +164,7 @@ h1 .g{background:linear-gradient(90deg,#fff 0%,var(--accent2) 55%,var(--accent))
 .soon{border-style:dashed;align-items:center;justify-content:center;text-align:center;min-height:240px;color:var(--dim)}
 .soon h3{color:var(--muted);margin-top:0}.soon p{margin:0;font-size:14px}
 .center-row{display:flex;justify-content:center;margin-top:40px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
 
 /* work view */
 .filters{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;margin:0 0 28px}
@@ -206,7 +207,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 footer nav{display:flex;gap:22px}footer a:hover{color:var(--accent)}
 
 /* views + reveal */
-[data-view="work"] .home-only,[data-view="home"] .work-only{display:none}
+[data-view="tab"] .home-only,[data-view="home"] .tab-only{display:none}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
@@ -222,8 +223,9 @@ footer nav{display:flex;gap:22px}footer a:hover{color:var(--accent)}
     </a>
     <nav class="links" aria-label="Primary">
       <a href="#top" data-nav="home">Home</a>
-      <a href="#journey" data-nav="journey">Journey</a>
       <a href="#work" data-nav="work">Work</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#teardowns" data-nav="teardowns">Teardowns</a>
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
     <div class="nav-r">
@@ -309,7 +311,7 @@ footer nav{display:flex;gap:22px}footer a:hover{color:var(--accent)}
     <div class="wrap">
       <div class="sec-head reveal">
         <div><div class="eyebrow">Portfolio</div><h2>Selected<br>work.</h2></div>
-        <a class="btn" href="#work">View all work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <div class="btn-row"><a class="btn" href="#work">All work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a><a class="btn" href="#projects">All projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></div>
       </div>
       <div class="grid" id="featured"></div>
     </div>
@@ -344,20 +346,20 @@ footer nav{display:flex;gap:22px}footer a:hover{color:var(--accent)}
   </section>
 </div>
 
-<!-- ================= WORK ================= -->
-<div class="work-only">
+<!-- ================= TABS (Work / Projects / Teardowns) ================= -->
+<div class="tab-only">
   <section style="padding-top:72px">
     <div class="wrap">
-      <div class="eyebrow">Portfolio</div>
-      <h2 style="font-size:clamp(48px,10vw,120px)">All work.</h2>
-      <p class="lede" style="margin:22px 0 48px">Key launches, initiatives, products I've built and teardowns. Built across enterprise AI, SaaS, consumer and fintech.</p>
+      <div class="eyebrow" id="tEyebrow"></div>
+      <h2 id="tTitle" style="font-size:clamp(48px,10vw,120px)"></h2>
+      <p class="lede" id="tLede" style="margin:22px 0 48px"></p>
       <div class="filters">
         <div class="chipset" id="chipset"></div>
-        <input class="search" id="search" type="search" placeholder="Search projects…" aria-label="Search projects">
+        <input class="search" id="search" type="search" placeholder="Search…" aria-label="Search">
       </div>
       <div class="count" id="count"></div>
       <div class="grid" id="library"></div>
-      <div class="empty" id="empty" hidden><h3 id="emptyT">No results found.</h3><p id="emptyP">Try a different search term or filter.</p><div class="center-row"><button class="btn" id="clear">Clear filters</button></div></div>
+      <div class="empty" id="empty" hidden><h3>No results found.</h3><p>Try a different search term or filter.</p><div class="center-row"><button class="btn" id="clear">Clear filters</button></div></div>
     </div>
   </section>
 </div>
@@ -366,7 +368,7 @@ footer nav{display:flex;gap:22px}footer a:hover{color:var(--accent)}
 <footer>
   <div class="wrap">
     <span>© 2026 Vishesh Dargan</span>
-    <nav aria-label="Footer"><a href="#top">Home</a><a href="#journey">Journey</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Footer"><a href="#top">Home</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#teardowns">Teardowns</a><a href="#contact">Contact</a></nav>
   </div>
 </footer>
 
@@ -417,7 +419,7 @@ const ITEMS = [
   summary:"Simplified modules for 5 personas by mapping journeys across 300+ metrics.",
   metrics:["−30% post failures","Adoption +10%","−20% rule set-up time"],
   bullets:["Flagged 20% of features as underused for sunset.","Added pre-publish checks validating post fields against each channel's API schema across 10 channels.","Introduced step-by-step walkthroughs for 20+ core features."]},
- {type:"Initiative",org:"PayPal · ISB ELP",period:"2026",featured:true,
+ {type:"Case Study",org:"PayPal · ISB ELP",period:"2026",featured:true,
   title:"PayPal CX AI Agent strategy",
   summary:"Shaping PayPal's CX AI agent strategy across blocked accounts and delayed refunds, its highest-friction journeys.",
   metrics:["$1.95M / yr cost gaps","5 gaps from 16 pain points"],
@@ -437,6 +439,11 @@ const ITEMS = [
   summary:"Shipped 5 Ad Management features to achieve Google RMF certification.",
   metrics:["$50K revenue protected","5 features"],
   bullets:["Awarded a pre-placement offer (1 of 20 interns)."]},
+ {type:"Initiative",org:"Absolutdata",period:"Internship",
+  title:"PepsiCo in-store SKU placement models",
+  summary:"Used deep-learning models to optimise in-store SKU placement for PepsiCo.",
+  metrics:["10% projected sales uplift","PPO (1 of 10)"],
+  bullets:["Awarded a pre-placement offer as 1 of 10 data science interns."]},
  {type:"Product Built",org:"Co-founder",period:"2025–26",featured:true,
   title:"TagWise — anonymous QR tags for vehicle owners",
   summary:"A privacy-first way to contact the owner of a wrongly parked vehicle. Grew 0→500+ users in 5 months, then sunset it for lack of product-market fit.",
@@ -448,7 +455,7 @@ const ITEMS = [
   summary:"An agent for Razorpay Agent Studio that decides, booking by booking, what a hotel guest should pay upfront, so hotels lose fewer rooms to no-shows without losing bookings.",
   metrics:["41% fewer no-shows (modelled)","₹8.8L / month (modelled)","11-screen prototype"],
   bullets:["Scores each booking's no-show risk, then picks the lightest guarantee: pay at hotel, a UPI hold, a part advance or full payment, and follows up on WhatsApp.","Built-in guardrails: it cannot cancel bookings or charge no-show fees without hotel approval, and never asks OTA guests for extra money.","Includes a with-vs-without replay, a 7-day pilot option and an audit log. Figures come from the prototype's modelled replay, not live results.","Built solo with AI in 12 days for the Razorpay AI PM Build Challenge, Track 2 (Recover and Grow with AI)."]},
- {type:"Initiative",org:"PM case study · Ethos",period:"2026",featured:true,
+ {type:"Case Study",org:"PM case study · Ethos",period:"2026",featured:true,
   links:[{url:"Ethos-Earned-Trust-Memo.pdf",label:"Read the memo"},{url:"https://ethos-agent-quality-prototype-virid.vercel.app/",label:"Open prototype"}],
   title:"Earned Trust — Ethos agent quality program",
   summary:"A recommendation to Ethos leadership: price every advance by how well the sale fits the customer, and cap how much Ethos has at risk with any one agent. Agents keep selling; only misconduct ends a contract.",
@@ -465,14 +472,15 @@ const ITEMS = [
   summary:"A voice-first, AI-powered protein tracking app that logs meals in under 10 seconds and suggests personalised meals.",
   metrics:["<10s per log","Voice-first"],
   bullets:[]},
- {type:"Product Built",org:"ProdX · ISB",period:"2026",
+ {type:"Case Study",org:"ProdX · ISB",period:"2026",
   title:"Swiggy Smart AI Meal Planner",
   summary:"National winner (1 of 500). An AI meal planner for urban corporate professionals.",
   metrics:["National winner (1/500)","20% projected AOV uplift"],
   bullets:[]}
 ];
-const TYPES = ["Key Launch","Initiative","Product Built","Teardown"];
-const slug = {"Key Launch":"launch","Initiative":"init","Product Built":"built","Teardown":"tear"};
+const slug = {"Key Launch":"launch","Initiative":"init","Case Study":"init","Product Built":"built","Teardown":"tear"};
+const WORK_ORGS = ["Sprinklr","Bain & Company","Pixis.ai","Absolutdata"];
+ITEMS.forEach(i=>{ i.tab = i.type==="Teardown" ? "teardowns" : (WORK_ORGS.includes(i.org) ? "work" : "projects"); });
 
 const ROLES = [
  {id:"isb",name:"ISB",short:"ISB",s:46,e:null,org:"Indian School of Business",title:"PGP · IT & Management",when:"Apr 2026 – Present",
@@ -534,27 +542,40 @@ function wireCards(root){
 $('#featured').innerHTML = ITEMS.filter(i=>i.featured).map(cardHTML).join('');
 wireCards($('#featured'));
 
-/* library */
-let filter="All", q="";
-function renderChips(){
-  const all=["All",...TYPES];
-  $('#chipset').innerHTML = all.map(t=>{
-    const n = t==="All"?ITEMS.length:ITEMS.filter(i=>i.type===t).length;
+/* tabs: Work / Projects / Teardowns */
+const TABS = {
+  work:{eyebrow:"Experience",title:"Work.",lede:"Products and programs I've shipped at Sprinklr, Bain & Company, Pixis.ai and Absolutdata.",chip:i=>i.org},
+  projects:{eyebrow:"Projects",title:"Projects.",lede:"Products I've built and concepts I've designed, from DayZero and Guarantee Agent to Earned Trust and TagWise.",chip:i=>i.type},
+  teardowns:{eyebrow:"Teardowns",title:"Teardowns.",lede:"How great products work, and what I'd change.",chip:i=>i.type}
+};
+let tab="work", filter="All", q="";
+const HOME_TITLE = document.title;
+function renderChips(base){
+  const bar=$('#chipset'), T=TABS[tab];
+  const labels=[...new Set(base.map(T.chip))];
+  bar.innerHTML=["All",...labels].map(t=>{
+    const n=t==="All"?base.length:base.filter(i=>T.chip(i)===t).length;
     return `<button class="f" aria-pressed="${t===filter}" data-t="${t}">${t}<small>${n}</small></button>`;
   }).join('');
   $$('.f').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.t;renderLibrary();}));
 }
 function renderLibrary(){
-  renderChips();
-  const list = ITEMS.filter(i=>(filter==="All"||i.type===filter) && (!q || (i.title+i.summary+i.org+i.metrics.join(' ')).toLowerCase().includes(q)));
-  $('#count').textContent = list.length+" item"+(list.length===1?"":"s");
-  const lib=$('#library');
-  let html=list.map(cardHTML).join('');
-  if((filter==="All"||filter==="Teardown")&&!q) html+=`<article class="card soon reveal in"><div><span class="tag t-tear">Teardown</span><h3 style="margin-top:18px">Teardowns</h3><p>Product teardowns are on the way.</p></div></article>`;
-  lib.innerHTML=html; wireCards(lib);
+  const T=TABS[tab], base=ITEMS.filter(i=>i.tab===tab), lib=$('#library'), empty=$('#empty');
+  if(tab==='projects'){const ORDER=["DayZero","Guarantee Agent","Earned Trust","TagWise"],r=i=>{const k=ORDER.findIndex(o=>i.title.startsWith(o));return k<0?99:k};base.sort((a,b)=>r(a)-r(b));}
+  $('#tEyebrow').textContent=T.eyebrow; $('#tTitle').textContent=T.title; $('#tLede').textContent=T.lede;
+  document.title=T.title.replace('.','')+' — Vishesh Dargan';
+  $('.filters').hidden=!base.length;
+  if(!base.length){
+    $('#count').textContent='';
+    lib.innerHTML=`<article class="card soon"><div><span class="tag t-tear">Teardown</span><h3 style="margin-top:18px">Teardowns are on the way</h3><p>Product teardowns will land here soon.</p></div></article>`;
+    lib.hidden=false; empty.hidden=true; return;
+  }
+  renderChips(base);
+  const list=base.filter(i=>(filter==="All"||T.chip(i)===filter)&&(!q||(i.title+i.summary+i.org+i.metrics.join(' ')).toLowerCase().includes(q)));
+  $('#count').textContent=list.length+" item"+(list.length===1?"":"s");
+  lib.innerHTML=list.map(cardHTML).join(''); wireCards(lib);
   $$('.reveal',lib).forEach(n=>n.classList.add('in'));
-  const none = list.length===0 && !(filter==="Teardown"&&!q);
-  $('#empty').hidden = !none; lib.hidden = none;
+  empty.hidden=list.length>0; lib.hidden=list.length===0;
 }
 $('#search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();renderLibrary();});
 $('#clear').addEventListener('click',()=>{filter="All";q="";$('#search').value="";renderLibrary();});
@@ -618,17 +639,20 @@ function observe(){ $$('.reveal,#metrics').forEach(n=>io?io.observe(n):n.classLi
   tick(); if(!reduce)setInterval(tick,2600);
 })();
 
-/* router: #work shows the library, everything else is the home page */
+/* router: #work, #projects, #teardowns are tabs; anything else is the home page */
 function route(){
-  const h=location.hash, work=h==='#work';
-  document.body.dataset.view=work?'work':'home';
-  $$('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===(work?'work':(h.slice(1)||'home'))));
-  if(work){window.scrollTo(0,0);renderLibrary();}
-  else{
-    const el=h&&h!=='#top'?document.getElementById(h.slice(1)):null;
+  const h=location.hash.slice(1), isTab=!!TABS[h];
+  if(isTab){
+    if(tab!==h){tab=h;filter="All";q="";$('#search').value="";}
+    document.body.dataset.view='tab'; window.scrollTo(0,0); renderLibrary();
+  }else{
+    document.body.dataset.view='home'; document.title=HOME_TITLE;
+    const el=h&&h!=='top'?document.getElementById(h):null;
     requestAnimationFrame(()=>el?el.scrollIntoView():window.scrollTo(0,0));
     observe();
   }
+  const key=isTab?h:(h==='contact'?'contact':'home');
+  $$('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===key));
 }
 addEventListener('hashchange',route); route(); observe();
 </script>
